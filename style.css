@@ -33,7 +33,7 @@ body {
 .calc-block select {
 	height: 30px;
 }
-.calc-block .space {
+.calc-block .area-input {
 	padding: 5px;
 	width: 100px;
 	display: block;
