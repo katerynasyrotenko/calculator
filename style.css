@@ -1,0 +1,43 @@
+/*RESET*/
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, a, abbr, 
+acronym, address, img, center, ol, ul, li, dl, dt, dd, form, fieldset, label, legend, 
+input, select, button, textarea, table, tbody, tr, th, td, article, aside, canvas, 
+details, embed, figure, figcaption, footer, header, nav, section, time, mark, audio, video {
+	border: 0; 
+	font-size: 1rem; /*16px*/
+	font: inherit; 
+	vertical-align: baseline; 
+	padding: 0; 
+	margin: 0; }
+header, footer, nav, section, article { display: block; }
+ol, ul { list-style: none; }
+table { border-collapse: collapse; border-spacing: 0; }
+button::-moz-focus-inner, input[type=submit]::-moz-focus-inner, 
+input[type=button]::-moz-focus-inner { padding:0; border:0; }
+/*End of reset*/
+
+body {
+	font-family: 'Arial', sans-serif;
+}
+
+.calc-block {
+	width: 900px;
+	margin: 50px auto;
+	padding: 10px;
+	background-color: #eee;
+}
+.calc-block>p,
+.calc-block .results {
+	padding: 20px 0;
+}
+.calc-block select {
+	height: 30px;
+}
+.calc-block .space {
+	padding: 5px;
+	width: 100px;
+	display: block;
+	margin: 10px 0;
+}
+
+

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Calculator</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<article class="calc-block">
+		<p>Выберите тип помещения</p>
+		<form>
+			<select>
+				<option value="bathroom">Ванная</option>
+				<option value="kitchen">Кухня</option>
+				<option value="room">Комната</option>
+				<option value="apartment">Квартира</option>
+				<option value="house">Дом</option>
+				<option value="office">Офис</option>
+			</select>
+		</form>
+		<p>Укажите площадь помещения</p>
+		<input type="number" step="0.5" min="2" max="6" name="" class="space">
+		<input type="number" step="1" min="6" max="12" name="" class="space">
+		<input type="number" step="1" min="8" max="24" name="" class="space">
+		<input type="number" step="1" min="20" max="250" name="" class="space">
+		<input type="number" step="1" min="20" max="300" name="" class="space">
+		<input type="number" step="1" min="20" max="1000" name="" class="space">
+		<div class="results">
+			<p>Площадь: <span></span> м<sup>2</sup>.</p>
+			<p>Стоимость: от <span></span> до <span></span> руб.</p>
+			<p>Срок ремонта: от <span></span> до <span></span> дней.</p>
+		</div>
+	</article>
+</body>
+</html>
