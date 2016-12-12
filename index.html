@@ -5,27 +5,29 @@
 	<title>Calculator</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<script type="text/javascript" src="js/script.js"></script>
+	<script type="text/javascript" src="js/data.js"></script>
 </head>
 <body>
 	<article class="calc-block">
 		<p>Выберите тип помещения</p>
 		<form>
 			<select class="select">
-				<option value="bathroom">Ванная</option>
-				<option value="kitchen">Кухня</option>
-				<option value="room">Комната</option>
-				<option value="apartment">Квартира</option>
-				<option value="house">Дом</option>
-				<option value="office">Офис</option>
+				
 			</select>
 		</form>
-		<p>Укажите площадь помещения</p>
-		<input type="number" name="" class="area-input">
-		<div class="results">
+		<div class="results small-scale">
+			<p>Укажите площадь помещения</p>
+			<select class="input-area"></select>
 			<p>Площадь: <span class="area"></span> м<sup>2</sup>.</p>
-			<p>Стоимость: от <span></span> до <span></span> руб.</p>
-			<p>Срок ремонта: от <span></span> до <span></span> дней.</p>
-			<p>Помещение: <span class="room-type"></span></p>
+			<p>Стоимость: от <span class="min-price"></span> до <span class="max-price"></span> руб.</p>
+			<p>Срок ремонта: от <span class="min-term"></span> до <span class="max-term"></span> дней.</p>
+		</div>
+		<div class="results large-scale">
+			<p>Укажите площадь помещения</p>
+			<input type="number" step="1" min="20" class="area-input">
+			<p>Площадь: <span class="area"></span> м<sup>2</sup>.</p>
+			<p>Стоимость 1 м<sup>2</sup>: <span class="unit-price"></span> руб.</p>
+			<p>Стоимость общая: <span class="total-price"></span> руб.</p>
 		</div>
 	</article>
 </body>
