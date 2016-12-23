@@ -1,7 +1,7 @@
 
 function selectRoomType(roomType) {
-	var roomInfo = map[roomType]; //map.roomType - не правильно, потому что это равносильно map['roomType'] - нам надо взять то, что находится внутри roomtype, а не сам roomtype
-	var scale = roomInfo.scale; //roomInfo['scale']
+	var roomInfo = map[roomType]; 
+	var scale = roomInfo.scale; 
 	var smallScale = document.querySelector ('.small-scale');
 	var largeScale = document.querySelector ('.large-scale');
 	switch (scale) {
@@ -18,21 +18,26 @@ function selectRoomType(roomType) {
 				option.value = index;
 				select.appendChild (option);
 			};
-			showSmallScale(array[parseInt(select.value)], smallScale);
+			showSmallScale(array[parseFloat(select.value)], smallScale);
 		break;
 
 		case 'large': 
 			smallScale.style.display = 'none';
 			largeScale.style.display = 'block';
-			showLargeScale(roomInfo.infoList[0], largeScale);
+			showLargeScale(roomInfo.infoList[0], largeScale, true);
 		break;
 	}
 }
-function showLargeScale (object, template) {
+function showLargeScale (object, template, flag) {
 	var inputArea = template.querySelector('.input-area');
-	inputArea.value = object.minFootage;
+	if (flag) { 
+		inputArea.value = object.minFootage;
+	} 
+	else if (parseFloat(inputArea.value) < parseFloat(inputArea.min)) {
+		inputArea.value = inputArea.min;
+	};
 	var area = template.querySelector ('.area');
-	area.innerHTML = object.minFootage;
+	area.innerHTML = inputArea.value;
 	var unitPrice = template.querySelector('.unit-price');
 	unitPrice.innerHTML = object.price;
 	var totalPrice = template.querySelector('.total-price');
@@ -72,7 +77,7 @@ function onSmallScaleAreaChange(event) {
 function onLargeScaleAreaChange(event) {
 	var roomTypeSelect = document.querySelector('.select');
 	var array = map[roomTypeSelect.value].infoList;
-	var inputValue = event.srcElement.value; //это будет input
+	var inputValue = event.srcElement.value; 
 	for (var i = 0; i < array.length; i++) {
 		var item = array[i];
 		if (item.maxFootage == undefined) {
@@ -82,7 +87,7 @@ function onLargeScaleAreaChange(event) {
 			break;
 		}
 	}
-	showLargeScale(item, document.querySelector ('.large-scale'));
+	showLargeScale(item, document.querySelector ('.large-scale'), false);
 }
 
 function onWindowLoad(){
@@ -101,4 +106,3 @@ function onWindowLoad(){
 	selectRoomType(select.value);
 }
 window.addEventListener("load", onWindowLoad);
-console.log('immediately');
